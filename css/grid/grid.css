@@ -51,8 +51,18 @@
 .card > * {
   grid-column: 1;
   grid-row: 1;
-  /* 축약 */
+  /* shorthand */
   /* grid-area: 1/-1; */
+}
+/* stretched link */
+.card a::after {
+  position: absolute;
+  content: "";
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 .card img {
   object-fit: cover;
@@ -72,12 +82,17 @@
   padding: 1vw 3vw;
   height: 25%;
   background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.2s ease;
+}
+.card-content:hover {
+  background-color: rgba(0, 0, 0, 0.7);
 }
 .card-content * {
   font-size: 3vw;
   color: #fff;
   text-shadow: #000 1px 1px 3px;
 }
-.card-content strong {
+.card-content p {
+  margin: 0;
   font-size: 2vw;
 }
