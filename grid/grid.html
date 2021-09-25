@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS - grid</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/grid/grid.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>display: <span>grid</span></h1>
+      <p class="infotext">css grid visualizer</p>
+
+      <!-- grid -->
+      <div class="section">
+        <h2>Basic Grid Properties</h2>
+        <sub>grid-template-[columns, rows]: repeat(num, 1fr 100px 3rem and more..)</sub>
+        <div class="control control-grid">
+          <div>.grid {</div>
+          <div class="item">
+            display: <span id="grid-display">grid</span>;
+            <select name="" id="selectgrid">
+              <option value="grid">grid</option>
+              <option value="inline-grid">inline-grid</option>
+              <option value="subgrid">subgrid</option>
+            </select>
+          </div>
+          <div class="item">
+            <label for="grid-template-rows">grid-template-rows: </label><input type="text" id="grid-template-rows" />
+            <span class="ex">ex: 1fr 2fr 100px auto | ex2: repeat(2, 1fr 120px)</span>
+          </div>
+          <div class="item">
+            <label for="grid-template-columns">grid-template-columns: </label><input type="text" id="grid-template-columns" />
+            <span class="ex">ex: 80px 1fr 150px auto | ex2: repeat(2, 10% 2fr 1fr)</span>
+          </div>
+          <div class="item"><label for="gap">gap: </label><input type="text" id="gap" value=".25rem" /></div>
+          <div class="item"><label for="grid-auto-rows">grid-auto-rows: </label><input type="text" id="grid-auto-rows" /></div>
+          <div class="item"><label for="justify-items">justify-items: </label><input type="text" id="justify-items" /></div>
+          <div>}</div>
+        </div>
+
+        <p>
+          .grid
+          <button id="addItem">Add item</button>
+          <button id="removeItem">Remove item</button>
+        </p>
+        <div class="grid" style="display: grid">
+          <div class="item">item 1</div>
+          <div class="item">item 2</div>
+          <div class="item">item 3</div>
+          <div class="item">item 4</div>
+          <div class="item">item 5</div>
+          <div class="item">item 6</div>
+          <div class="item">item 7</div>
+          <div class="item">item 8</div>
+          <div class="item">item 9</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Place items inside the grid <small>(Not yet!)</small></h2>
+        <small class="notyet">The problem is that I have to list too many properties for fine-tuning.</small>
+        <!-- <sub>grid-template-[columns, rows]: repeat(num, 1fr 100px 3rem and more..)</sub> -->
+        <div class="control control-card">
+          <div>
+            .card {<br />
+            &nbsp;&nbsp; position: relative;<br />
+            &nbsp;&nbsp; display: grid;<br />
+            <div class="item">
+              <label for="parent_align-items">align-items: </label><input type="text" id="parent_align-items" value="end" />;
+              <span class="ex">default: stretch</span>
+            </div>
+            }<br />
+            .card .card-content {<br />
+            &nbsp;&nbsp; display: flex;<br />
+          </div>
+          <div class="item">
+            <label for="grid-row">grid-row: </label><input type="text" id="grid-row" value="1" />;
+            <span class="ex"></span>
+          </div>
+          <div class="item">
+            <label for="grid-column">grid-column: </label><input type="text" id="grid-column" value="1" />;
+            <span class="ex"></span>
+          </div>
+          <div class="item"><label for="flex-direction">flex-direction: </label><input type="text" id="flex-direction" value="column" />;</div>
+          <div class="item">
+            <label for="justify-content">justify-content: </label><input type="text" id="justify-content" />;
+            <span class="ex">ex: start, center, end</span>
+          </div>
+          <div class="item">
+            <label for="align-items">align-items: </label><input type="text" id="align-items" />;
+            <span class="ex">ex: start, center, end</span>
+          </div>
+          <div>
+            &nbsp;&nbsp; height: 25%;<br />
+            }<br />
+            .card .card-footer { <br />
+            &nbsp;&nbsp; flex-direction: row;
+          </div>
+          <div>}</div>
+        </div>
+
+        <!-- <p>
+          .card
+          <button id="addItem">Add item</button>
+          <button id="removeItem">Remove item</button>
+        </p> -->
+        <article class="card">
+          <div class="card-thumb">
+            <img src="../images/animals.jpg" alt="개" />
+          </div>
+          <div class="card-content">
+            <h2><a href="#">Title</a></h2>
+            <strong>Sub title</strong>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <script src="../js/grid/grid.js"></script>
+  </body>
+</html>
